@@ -18,7 +18,7 @@ use {
     }
 };
 
-pub use fields::fields;
+pub use nom_fields::fields;
 
 pub fn parse<'i, T, E>(input: Input<'i>) -> ParseResult<T, E>
 where

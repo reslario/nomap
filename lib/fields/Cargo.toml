@@ -1,8 +1,0 @@
-[package]
-name = "fields"
-version = "0.1.0"
-authors = ["reslario <simon.kunze2310@gmail.com>"]
-edition = "2018"
-
-[dependencies]
-nom = "5.1.1"

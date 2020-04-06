@@ -14,4 +14,4 @@ documentation = "https://docs.rs/nomap/"
 [dependencies]
 nom = "5.1.1"
 arrayvec = "0.5.1"
-fields = { path = "lib/fields" }
+nom-fields = "0.1.0"
