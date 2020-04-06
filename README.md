@@ -1,0 +1,24 @@
+# nomap
+A parser for the `.map` file format used by Quake 1 & 2 as well as Half-Life 1,
+implemented using the [nom](https://www.crates.io/crates/nom) parsing framework. It can
+easily be integrated with other `nom` parsers.
+
+`nomap` is whitespace agnostic and ignores comments.
+
+## Example
+```rust
+// parse the example map with the standard format
+let map = nomap::parse::<nomap::formats::Standard>(include_str!("../examples/example.map")).unwrap();
+
+// report our findings
+for ent in map.entities.iter() {
+    println!(
+        "Found entity of class `{}` with {} brush{}",
+        // every entity should have this, so we optimistically index here
+        ent.fields["classname"],
+        ent.brushes.len(),
+        // some fanciness
+        if ent.brushes.len() == 1 { "" } else { "es" }
+    )
+}
+```
