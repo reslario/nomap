@@ -1,3 +1,6 @@
+[![](http://meritbadge.herokuapp.com/nomap)](https://crates.io/crates/nomap)
+[![Docs](https://docs.rs/nomap/badge.svg)](https://docs.rs/nomap/)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)]()
 # nomap
 A parser for the `.map` file format used by Quake 1 & 2 as well as Half-Life 1,
 implemented using the [nom](https://www.crates.io/crates/nom) parsing framework. It can
