@@ -7,6 +7,8 @@ implemented using the [nom](https://www.crates.io/crates/nom) parsing framework.
 easily be integrated with other `nom` parsers.
 
 `nomap` is whitespace agnostic and ignores comments.
+It also optionally provides `Display` implementations for all its types (through
+the "display" feature), so you can serialise a parsed map back into a string.
 
 ## Example
 ```rust

@@ -1,9 +1,11 @@
 //! # nomap
 //! A parser for the `.map` file format used by Quake 1 & 2 as well as Half-Life 1,
-//! implemented using the [nom](https://www.crates.io/crates/nom) parsing framework. It can
-//! easily be integrated with other `nom` parsers.
+//! implemented using the [nom](https://www.crates.io/crates/nom) parsing framework.
+//! It can easily be integrated with other `nom` parsers.
 //!
 //! `nomap` is whitespace agnostic and ignores comments.
+//! It also optionally provides `Display` implementations for all its types (through
+//! the "display" feature), so you can serialise a parsed map back into a string.
 //!
 //! ## Example
 //! ```
@@ -24,6 +26,8 @@
 //! ```
 
 pub mod parse;
+#[cfg(feature = "display")]
+pub mod display;
 
 use parse::core::{
     Input,
