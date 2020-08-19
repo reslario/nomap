@@ -39,7 +39,10 @@ use parse::core::{
     }
 };
 
-pub use parse::formats::{self, Map};
+pub use parse::{
+    *,
+    formats::Map
+};
 
 /// Convenience function to parse a map from a string. Assumes that the input
 /// consists entirely of the map and returns the [Error](parse::core::Error)
