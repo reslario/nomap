@@ -1,11 +1,13 @@
 use {
     crate::{
         Map,
-        parse::formats::shared::*
+        parse::formats::{
+            Format,
+            shared::*
+        }
     },
     std::fmt::{Display, Formatter, Result}
 };
-use crate::parse::formats::Format;
 
 impl Display for Vector3 {
     fn fmt(&self, f: &mut Formatter<'_>) -> Result {
