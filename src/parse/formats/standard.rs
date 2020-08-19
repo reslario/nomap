@@ -128,5 +128,29 @@ mod test {
             })
         )
     }
+
+    #[cfg(feature = "display")]
+    #[test]
+    fn roundtrip() {
+        let map = crate::Map::<Standard> {
+            entities: vec![Entity {
+                fields: crate::formats::shared::Fields(std::iter::once(("k".into(), "v".into())).collect()),
+                brushes: vec![Brush {
+                    planes: vec![Plane {
+                        texture: Texture {
+                            name: "texture".into(),
+                            ..<_>::default()
+                        },
+                        ..<_>::default()
+                    }]
+                }]
+            }]
+        };
+        let string = dbg!(map.to_string());
+        assert_eq!(
+            expected(map),
+            parse(&string)
+        )
+    }
 }
 
