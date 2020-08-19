@@ -11,13 +11,13 @@ impl Display for Scale {
 
 impl Display for Axis {
     fn fmt(&self, f: &mut Formatter<'_>) -> Result {
-        write!(f, "{} {}", self.normal, self.offset)
+        write!(f, "[ {} {} ]", self.normal, self.offset)
     }
 }
 
 impl Display for Axes {
     fn fmt(&self, f: &mut Formatter<'_>) -> Result {
-        write!(f, "[ {} {} ]", self.u, self.v)
+        write!(f, "{} {}", self.u, self.v)
     }
 }
 
