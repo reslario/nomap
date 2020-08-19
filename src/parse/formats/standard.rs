@@ -18,7 +18,7 @@ use {
 };
 
 /// The standard map format created by id Software.
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, Copy, PartialEq, Default)]
 pub struct Standard;
 
 impl Format for Standard {
@@ -38,7 +38,7 @@ pub type Plane = shared::Plane<TextureAlignment>;
 pub type Texture = shared::Texture<TextureAlignment>;
 
 /// Representation of the standard format's texture alignment.
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, PartialEq, Default)]
 pub struct TextureAlignment {
     pub offset: Vector2,
     pub rotation: f32,
@@ -57,7 +57,7 @@ where E: ParseError<Input<'i>> + Clone {
 }
 
 /// A simple two-dimensional vector using `f32`s.
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, PartialEq, Default)]
 pub struct Vector2 {
     pub x: f32,
     pub y: f32

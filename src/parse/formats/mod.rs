@@ -30,7 +30,7 @@ pub trait Format {
 
 /// Representation of a Quake/Half-Life 1 map as a `Vec` of entities,
 /// where the entity type is defined by the format.
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, PartialEq, Default)]
 pub struct Map<F: Format> {
     pub entities: Vec<F::Entity>,
 }

@@ -68,7 +68,7 @@ pub(crate) fn maybe_sep_terminated<'i, F, O, E>(parsed: F) -> impl Fn(Input<'i>)
 /// "origin" "-2704 1908 50"
 /// "_color" "1.00 0.93 0.70"
 /// ```
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, PartialEq, Default)]
 pub struct Fields(pub HashMap<String, String>);
 
 impl Fields {
@@ -116,7 +116,7 @@ where E: ParseError<Input<'i>> + Clone {
 /// Representation of a map entity with [key/value pairs](Fields) and a list
 /// of [Brush](Brush)es, which may be empty if the entity in question is a
 /// point entity, like a light.
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, PartialEq, Default)]
 pub struct Entity<B> {
     pub fields: Fields,
     pub brushes: Vec<B>
@@ -149,7 +149,7 @@ where
 /// ```plain
 /// ( 816 -796 356 ) ( 816 -804 356 ) ( 808 -804 356 ) stone1_3 [ 0 -1 0 -20 ] [ 1 0 0 16 ] -0 1 1
 /// ```
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, PartialEq, Default)]
 pub struct Plane<TA> {
     pub points: [Vector3; 3],
     pub texture: Texture<TA>
@@ -177,7 +177,7 @@ where
 }
 
 /// A simple three-dimensional vector using `f32`s.
-#[derive(Debug, Copy, Clone, PartialEq)]
+#[derive(Debug, Copy, Clone, PartialEq, Default)]
 pub struct Vector3 {
     pub x: f32,
     pub y: f32,
@@ -198,7 +198,7 @@ where E: ParseError<Input<'i>> + Clone {
 /// Representation of a texture, consisting of the
 /// texture's name and alignment. The format of the
 /// latter differs between map formats.
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, PartialEq, Default)]
 pub struct Texture<TA> {
     pub name: String,
     pub alignment: TA,
@@ -224,7 +224,7 @@ where
 
 /// Representation of a map brush, consisting of a
 /// list of [Plane](Plane)s.
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, PartialEq, Default)]
 pub struct Brush<TA> {
     pub planes: Vec<Plane<TA>>
 }

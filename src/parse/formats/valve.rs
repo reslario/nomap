@@ -22,7 +22,7 @@ use {
 };
 
 /// Valve Software's map format used in Half-Life 1.
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, Copy, PartialEq, Default)]
 pub struct Valve;
 
 impl Format for Valve {
@@ -42,7 +42,7 @@ pub type Plane = shared::Plane<TextureAlignment>;
 pub type Texture = shared::Texture<TextureAlignment>;
 
 /// Representation of the Valve format's texture alignment.
-#[derive(Debug, Copy, Clone, PartialEq)]
+#[derive(Debug, Copy, Clone, PartialEq, Default)]
 pub struct TextureAlignment {
     pub axes: Axes,
     pub rotation: f32,
@@ -61,7 +61,7 @@ where E: ParseError<Input<'i>> + Clone {
 }
 
 /// The u and v axes of the Valve format's texture alignment.
-#[derive(Debug, Copy, Clone, PartialEq)]
+#[derive(Debug, Copy, Clone, PartialEq, Default)]
 pub struct Axes {
     pub u: Axis,
     pub v: Axis
@@ -78,7 +78,7 @@ where E: ParseError<Input<'i>> + Clone {
 }
 
 /// A [texture alignment](TextureAlignment) axis in Valve's map format.
-#[derive(Debug, Copy, Clone, PartialEq)]
+#[derive(Debug, Copy, Clone, PartialEq, Default)]
 pub struct Axis {
     pub normal: Vector3,
     pub offset: f32
@@ -99,7 +99,7 @@ where E: ParseError<Input<'i>> + Clone {
 }
 
 /// The scale of a Valve format [Texture](super::shared::Texture).
-#[derive(Debug, Copy, Clone, PartialEq)]
+#[derive(Debug, Copy, Clone, PartialEq, Default)]
 pub struct Scale {
     pub u: f32,
     pub v: f32
@@ -231,4 +231,4 @@ mod test {
             })
         )
     }
-}
+}}
