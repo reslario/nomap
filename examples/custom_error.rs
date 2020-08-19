@@ -24,5 +24,5 @@ impl <I> nom::error::ParseError<I> for CustomError {
 fn main() {
     let result: nomap::parse::core::ParseResult<_, CustomError>
         = nomap::Map::<nomap::formats::Standard>::parse("not a map");
-    dbg!(result);
+    println!("{:?}", result);
 }
