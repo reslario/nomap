@@ -1,6 +1,6 @@
 [package]
 name = "nomap"
-version = "0.1.1"
+version = "0.2.0"
 authors = ["reslario <simon.kunze2310@gmail.com>"]
 edition = "2018"
 description = "A parser for the `.map` file format used by Quake 1 & 2 as well as Half-Life 1, implemented using the nom parsing framework."
