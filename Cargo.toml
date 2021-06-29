@@ -1,13 +1,13 @@
 [package]
 name = "nomap"
-version = "0.2.0"
+version = "0.2.1"
 authors = ["reslario <reslario.code@gmail.com>"]
 edition = "2018"
 description = "A parser for the `.map` file format used by Quake 1 & 2 as well as Half-Life 1, implemented using the nom parsing framework."
 repository = "https://github.com/reslario/nomap"
 homepage = "https://github.com/reslario/nomap"
 readme = "README.md"
-keywords = ["nom", "parser", "map"]
+keywords = ["nom", "parser", "map", "gamedev", "quake", "half-life"]
 license = "MIT OR Apache-2.0"
 documentation = "https://docs.rs/nomap/"
 
