@@ -7,7 +7,7 @@ description = "A parser for the `.map` file format used by Quake 1 & 2 as well a
 repository = "https://github.com/reslario/nomap"
 homepage = "https://github.com/reslario/nomap"
 readme = "README.md"
-keywords = ["nom", "parser", "map", "gamedev", "quake", "half-life"]
+keywords = ["nom", "parser", "gamedev", "quake", "half-life"]
 license = "MIT OR Apache-2.0"
 documentation = "https://docs.rs/nomap/"
 
